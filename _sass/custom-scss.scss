@@ -1,5 +1,7 @@
 // Add your own custom CSS here.
 @import "pygments-tomorrow";
+@import "embed";
+@import "bootstrap-callout";
 
 .post-content img,
 .post-excerpt-home img,
@@ -11,4 +13,9 @@
 .post-nav table {
   @extend .table;
   @extend .table-bordered;
+}
+
+.mermaid {
+  margin-bottom: $line-height-computed/2;
+  max-width: 100%;
 }

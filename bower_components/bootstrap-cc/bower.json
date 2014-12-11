@@ -1,0 +1,28 @@
+{
+  "name": "bootstrap-cc",
+  "version": "0.0.4",
+  "main": "dist/css/bootstrap-cc.css",
+  "authors": [
+    "Shu Uesugi <shu@chibicode.com>"
+  ],
+  "description": "Nice additions to Bootstrap",
+  "keywords": [
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/chibicode/bootstrap-cc",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Gemfile",
+    "Gemfile.lock",
+    "Gruntfile.js",
+    "package.json",
+    "dist/scss/bootstrap-cc.scss",
+    "examples"
+  ],
+  "devDependencies": {
+    "bootstrap-sass-official": "~3.3.0"
+  }
+}

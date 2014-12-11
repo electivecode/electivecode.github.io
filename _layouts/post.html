@@ -7,6 +7,9 @@ layout: default
   {% include post-header.html %}
 </div>
 <div class="post-content">
+  {% if page.wip %}
+    <div class="alert alert-warning">This post is a work in progress.</div>
+  {% endif %}
   {{ content }}
 </div>
 <div class="post-footer">

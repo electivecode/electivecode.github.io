@@ -1,0 +1,41 @@
+.callout {
+  padding: $panel-body-padding;
+  margin-bottom: $line-height-computed;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: $border-radius-base;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: $line-height-computed / 4;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  code {
+    border-radius: $border-radius-base;
+  }
+
+  + .callout {
+    margin-top: $line-height-computed / -4;
+  }
+}
+
+$map: (default: $gray-light,
+       primary: $brand-primary,
+       success: $brand-success,
+       danger: $brand-danger,
+       warning: $brand-warning,
+       info: $brand-info);
+
+@each $class, $color in $map {
+  .callout-#{$class} {
+    border-left-color: $color;
+
+    h1, h2, h3, h4, h5, h6 {
+      color: $color;
+    }
+  }
+}

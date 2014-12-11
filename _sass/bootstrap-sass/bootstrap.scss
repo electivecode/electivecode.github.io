@@ -26,7 +26,8 @@
 @import "bootstrap/breadcrumbs";
 @import "bootstrap/pagination";
 @import "bootstrap/pager";
-@import "bootstrap/labels";
+// Conflict with Mermaid's label
+// @import "bootstrap/labels";
 @import "bootstrap/badges";
 @import "bootstrap/jumbotron";
 @import "bootstrap/thumbnails";

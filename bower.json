@@ -1,0 +1,21 @@
+{
+  "name": "electivecode.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/electivecode/electivecode.github.io",
+  "authors": [
+    "Shu Uesugi <shu@chibicode.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-cc": "~0.0.4",
+    "mermaid": "~0.2.15"
+  }
+}

@@ -1,0 +1,87 @@
+$grid-five-columns: 5;
+
+@mixin make-grid-five-columns($i: 1, $list: ".col-xs-five-#{$i}, .col-sm-five-#{$i}, .col-md-five-#{$i}, .col-lg-five-#{$i}") {
+  @for $i from (1 + 1) through $grid-five-columns {
+    $list: "#{$list}, .col-xs-five-#{$i}, .col-sm-five-#{$i}, .col-md-five-#{$i}, .col-lg-five-#{$i}";
+  }
+  #{$list} {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+}
+
+@mixin float-grid-five-columns($class, $i: 1, $list: ".col-#{$class}-five-#{$i}") {
+  @for $i from (1 + 1) through $grid-five-columns {
+    $list: "#{$list}, .col-#{$class}-five-#{$i}";
+  }
+  #{$list} {
+    float: left;
+  }
+}
+
+@mixin calc-grid-five-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .col-#{$class}-five-#{$index} {
+      width: percentage(($index / $grid-five-columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .col-#{$class}-five-push-#{$index} {
+      left: percentage(($index / $grid-five-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .col-#{$class}-five-push-0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .col-#{$class}-five-pull-#{$index} {
+      right: percentage(($index / $grid-five-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .col-#{$class}-five-pull-0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .col-#{$class}-five-offset-#{$index} {
+      margin-left: percentage(($index / $grid-five-columns));
+    }
+  }
+}
+
+@mixin loop-grid-five-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-five-column($i, $class, $type);
+  }
+}
+
+@mixin make-grid-five($class) {
+  @include float-grid-five-columns($class);
+  @include loop-grid-five-columns($grid-five-columns, $class, width);
+  @include loop-grid-five-columns($grid-five-columns, $class, pull);
+  @include loop-grid-five-columns($grid-five-columns, $class, push);
+  @include loop-grid-five-columns($grid-five-columns, $class, offset);
+}
+
+@include make-grid-five-columns;
+
+@include make-grid-five(xs);
+
+@media (min-width: $screen-sm-min) {
+  @include make-grid-five(sm);
+}
+
+@media (min-width: $screen-md-min) {
+  @include make-grid-five(md);
+}
+
+@media (min-width: $screen-lg-min) {
+  @include make-grid-five(lg);
+}
