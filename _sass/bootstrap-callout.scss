@@ -10,8 +10,10 @@
     margin-bottom: $line-height-computed / 4;
   }
 
-  p:last-child {
-    margin-bottom: 0;
+  p, ul, ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   code {

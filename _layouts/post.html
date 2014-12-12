@@ -11,6 +11,16 @@ layout: default
     <div class="alert alert-warning">This post is a work in progress.</div>
   {% endif %}
   {{ content }}
+  {% if page.prev_lesson %}
+    <p>
+      <a href="/{{ page.prev_lesson }}" class="btn btn-default">&larr; Go to Previous Lesson</a>
+    </p>
+  {% endif %}
+  {% if page.next_lesson %}
+    <p>
+      <a href="/{{ page.next_lesson }}" class="btn btn-primary">Go to Next Lesson &rarr;</a>
+    </p>
+  {% endif %}
 </div>
 <div class="post-footer">
   {% include post-footer.html %}
