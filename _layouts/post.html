@@ -11,6 +11,9 @@ layout: default
     <div class="alert alert-warning">This post is a work in progress.</div>
   {% endif %}
   {{ content }}
+  {% if page.prev_lesson or page.next_lesson %}
+    <div class="space-md"></div>
+  {% endif %}
   {% if page.prev_lesson %}
     <p>
       <a href="/{{ page.prev_lesson }}" class="btn btn-default">&larr; Go to Previous Lesson</a>
