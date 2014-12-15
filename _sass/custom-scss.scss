@@ -8,6 +8,9 @@
 .post-nav img {
   @extend .img-rounded;
   border: 1px solid $gray-light;
+  &.no-border {
+    border: none;
+  }
 }
 .post-content table,
 .post-excerpt-home table,

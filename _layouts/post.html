@@ -13,15 +13,15 @@ layout: default
   {{ content }}
   {% if page.prev_lesson or page.next_lesson %}
     <div class="space-md"></div>
+    <p>
   {% endif %}
   {% if page.prev_lesson %}
-    <p>
       <a href="/{{ page.prev_lesson }}" class="btn btn-default">&larr; Go to Previous Lesson</a>
-    </p>
   {% endif %}
   {% if page.next_lesson %}
-    <p>
       <a href="/{{ page.next_lesson }}" class="btn btn-primary">Go to Next Lesson &rarr;</a>
+  {% endif %}
+  {% if page.prev_lesson or page.next_lesson %}
     </p>
   {% endif %}
 </div>
