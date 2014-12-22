@@ -3,6 +3,8 @@ url: "http://electivecode.github.io" # the base hostname & protocol for your sit
 title: "ElectiveCode"
 markdown: redcarpet
 
+port: 8270
+
 # This is used by feed.xml. Uncomment if you want to use it.
 # description: "..."
 
