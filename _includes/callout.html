@@ -1,0 +1,4 @@
+<div class="callout callout-info">
+  {% capture callout %}{% include callouts/{{include.id}}.md %}{% endcapture %}
+  {{ callout | markdownify }}
+</div>
